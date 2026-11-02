@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 from datetime import datetime
@@ -10,6 +11,22 @@ app = FastAPI(
     title="Python App API",
     description="A FastAPI application connected to Neon PostgreSQL.",
     version="1.0.0",
+)
+
+# ──────────────────────────────────────────────
+# CORS — allow TechSol website + local dev
+# ──────────────────────────────────────────────
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://www.techsol.site",
+        "https://techsol.site",
+        "http://localhost:3206",
+        "http://localhost:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["GET"],
+    allow_headers=["*"],
 )
 
 
