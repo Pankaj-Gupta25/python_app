@@ -13,6 +13,12 @@ app = FastAPI(
 )
 
 
+@app.get("/", tags=["Root"])
+async def root():
+    """Welcome route."""
+    return {"message": "Welcome to the Python App! 🚀"}
+
+
 # ──────────────────────────────────────────────
 # Health check
 # ──────────────────────────────────────────────
