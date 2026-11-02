@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment secrets — never commit the real .env
+.env
+
+# Editor / OS artefacts
+.DS_Store
+.idea/
+.vscode/
+
+# Docker
+*.log
